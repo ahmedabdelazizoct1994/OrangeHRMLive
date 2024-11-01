@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CucumberSuite">
+    <test name="Cucumber Tests">
+        <classes>
+            <class name="tests.userManagement.UserManagementTestRunner"/>
+            <class name="tests.candidateManagement.CandidateManagementTestRunner"></class>
+        </classes>
+    </test>
+</suite>
