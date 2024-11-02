@@ -9,7 +9,6 @@ public class ConfigReader {
     private static Properties properties = new Properties();
     private static final String configFilePath = System.getProperty("user.dir") + "/resources/config.properties";
 
-    // Static block to initialize properties when the class is loaded
     static {
         try (InputStream inputStream = new FileInputStream(configFilePath)) {
             properties.load(inputStream);

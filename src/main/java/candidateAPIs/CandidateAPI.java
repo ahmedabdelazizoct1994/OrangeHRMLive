@@ -11,17 +11,11 @@ import java.util.Map;
 
 public class CandidateAPI {
 
-    // Base URL for OrangeHRM
     private static final String BASE_URL = "https://opensource-demo.orangehrmlive.com/";
-
-    // Login credentials
     private static final String USERNAME = ConfigReader.getProperty("username");
     private static final String PASSWORD = ConfigReader.getProperty("password");
-
-    // Authentication token, assuming we need it for authorization
     private String authToken;
 
-    // Step 1: Authenticate and obtain a session token
     public void authenticate() {
         Map<String, String> credentials = new HashMap<>();
         credentials.put("username", USERNAME);
@@ -33,12 +27,12 @@ public class CandidateAPI {
                 .body(credentials)
                 .post("/auth");
 
-        authToken = response.jsonPath().getString("token"); // Assuming a token is returned
+        authToken = response.jsonPath().getString("token");
     }
 
-    // Step 2: Add a Candidate
+
     public void addCandidate(String firstName,String lastName,String email,String jobTitle) {
-        // Candidate data
+
         Map<String, Object> candidateData = new HashMap<>();
         candidateData.put("firstName", firstName);
         candidateData.put("lastName", lastName);
