@@ -10,19 +10,14 @@ import utils.WebDriverManagerUtil;
 
 import java.time.Duration;
 
-    public class BasePage {
-        protected WebDriver driver;
-        private WebDriverWait wait;
+public class BasePage {
+    protected WebDriver driver;
 
+    public BasePage(WebDriver driver) {
+        this.driver = driver;
+    }
 
-        public BasePage(WebDriver driver) {
-            this.driver = driver;
-            this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); }
-
-
-    // Utility method to find an element with a wait
-    protected WebElement findElement(By locator) {
-          return driver.findElement(locator);
-        //return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    public WebElement findElement(By locator) {
+        return driver.findElement(locator);
     }
 }

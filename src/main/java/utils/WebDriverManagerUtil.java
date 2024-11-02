@@ -12,9 +12,9 @@ public class WebDriverManagerUtil {
 
     public static WebDriver getDriver() {
         if (driver == null) {
-            WebDriverManager.edgedriver().setup();
+            WebDriverManager.firefoxdriver().setup();
 
-            driver = new EdgeDriver();
+            driver = new FirefoxDriver();
             driver.manage().window().maximize();
         }
         return driver;

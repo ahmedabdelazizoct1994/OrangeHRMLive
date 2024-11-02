@@ -13,11 +13,12 @@ import utils.ConfigReader;
 public class UserManagementStepDef extends BaseTest {
     LoginPage loginPage;
     AdminPage adminPage;
+
     @Before
     public void init() {
         setUp();
         loginPage = new LoginPage(driver);
-        AdminPage adminPage = new AdminPage(driver);
+        adminPage = new AdminPage(driver);
 
     }
 
